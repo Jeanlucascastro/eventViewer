@@ -1,5 +1,5 @@
 # eventViewer
-Aplicativo backend do GEDAL para dispositimos moveis
+Backend do GEDAL para dispositimos moveis
 
 Este aplicativo tem a finalidade de divulgar os eventos atronomicos e os eventos do GEDAL com data, hora, local de observação e como observar.
 
