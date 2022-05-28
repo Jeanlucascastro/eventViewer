@@ -9,11 +9,7 @@ public class EventViewerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EventViewerApplication.class, args);
 		
-		Soma(1, 2);
-		
-		
-		
-		
+
 	}
 	
 	

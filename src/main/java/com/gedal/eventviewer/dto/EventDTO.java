@@ -1,6 +1,7 @@
 package com.gedal.eventviewer.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.gedal.eventviewer.domain.Event;
 
@@ -14,7 +15,7 @@ public class EventDTO implements Serializable {
 	
 	@Getter @Setter private String id;
 	@Getter @Setter private String nameEvent;
-	@Getter @Setter private String dateEvent;
+	@Getter @Setter private Date dateEvent;
 	@Getter @Setter private String description;
 	@Getter @Setter private String location;
 	@Getter @Setter private String howToSee;

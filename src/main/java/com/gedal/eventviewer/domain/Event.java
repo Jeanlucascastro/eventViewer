@@ -2,9 +2,12 @@ package com.gedal.eventviewer.domain;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +21,8 @@ public class Event implements Serializable {
 	@Id
 	@Getter @Setter private String id;
 	@Getter @Setter private String nameEvent;
-	@Getter @Setter private String dateEvent;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Getter @Setter private Date dateEvent;
 	@Getter @Setter private String description;
 	@Getter @Setter private String location;
 	@Getter @Setter private String howToSee;
@@ -27,7 +31,7 @@ public class Event implements Serializable {
 		
 	}
 
-	public Event(String id, String nameEvent, String dateEvent, String description, String location, String howToSee) {
+	public Event(String id, String nameEvent, Date dateEvent, String description, String location, String howToSee) {
 		super();
 		this.id = id;
 		this.nameEvent = nameEvent;
