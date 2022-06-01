@@ -18,14 +18,16 @@ public class EventService {
 	@Autowired
 	private EventRepository repo;
 	
-	public List<Event> FindToday(){
+	
+	//return next events including current day events
+	public List<Event> findAll(){
 		Date date = new Date(System.currentTimeMillis());
-		return repo.findBydateEventIn(date);
+		return repo.findBydateEventGreaterThanEqual(date);
 	}
 	
 	
 	// return next events after the current date
-	public List<Event> findAll(){
+	public List<Event> FindToday(){
 		Date date = new Date(System.currentTimeMillis());
 		return repo.findBydateEventAfter(date);
 	}

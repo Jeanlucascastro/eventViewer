@@ -15,7 +15,7 @@ public interface EventRepository extends MongoRepository<Event, String> {
 	
 //	List<Event> findByTitleContaining(String text);
 	List<Event> findBydateEventAfter(Date date);
-	List<Event> findBydateEventIn(Date date);
+	List<Event> findBydateEventGreaterThanEqual(Date date);
 	
 	
 }
