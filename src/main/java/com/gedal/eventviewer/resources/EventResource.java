@@ -31,6 +31,13 @@ public class EventResource {
 		return ResponseEntity.ok().body(listDto);
 	}
 	
+	@RequestMapping(value="/today",method=RequestMethod.GET)
+	public ResponseEntity<List<EventDTO>> FindToday() {
+		List<Event> list = service.FindToday();
+		List<EventDTO> listDto = list.stream().map(x -> new EventDTO(x)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDto);
+	}
+	
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<EventDTO> findById(@PathVariable String id) {
 		Event obj = service.findById(id);

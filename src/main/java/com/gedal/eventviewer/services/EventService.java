@@ -1,5 +1,6 @@
 package com.gedal.eventviewer.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,9 +18,23 @@ public class EventService {
 	@Autowired
 	private EventRepository repo;
 	
-	public List<Event> findAll(){
-		return repo.findAll();
+	public List<Event> FindToday(){
+		Date date = new Date(System.currentTimeMillis());
+		return repo.findBydateEventIn(date);
 	}
+	
+	
+	// return next events after the current date
+	public List<Event> findAll(){
+		Date date = new Date(System.currentTimeMillis());
+		return repo.findBydateEventAfter(date);
+	}
+	
+//	public List<Event> findByTitle(String text){
+//		return repo.findByTitleContaining(text);
+//	}
+	
+
 	
 	public Event findById(String id) {
 		Optional<Event> event = repo.findById(id);
@@ -59,5 +74,7 @@ public class EventService {
 		newObj.setLocation(obj.getLocation());
 		newObj.setHowToSee(obj.getHowToSee());
 	}
+	
+	
 	
 }

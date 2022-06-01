@@ -7,7 +7,7 @@ public class Marte implements Astro{
 	
 	@Override
 	public Double size(double size) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	@Override
