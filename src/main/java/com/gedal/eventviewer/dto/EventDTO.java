@@ -1,7 +1,9 @@
 package com.gedal.eventviewer.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.gedal.eventviewer.domain.Event;
 
@@ -19,6 +21,8 @@ public class EventDTO implements Serializable {
 	@Getter @Setter private String description;
 	@Getter @Setter private String location;
 	@Getter @Setter private String howToSee;
+	
+	@Getter @Setter private List<CommentDTO> comments = new ArrayList<>();
 	
 	public EventDTO() {
 		
