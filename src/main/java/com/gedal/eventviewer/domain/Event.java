@@ -2,15 +2,20 @@ package com.gedal.eventviewer.domain;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.xml.stream.events.Comment;
 
 @Document(collection="event")
 public class Event implements Serializable {
@@ -26,19 +31,27 @@ public class Event implements Serializable {
 	@Getter @Setter private String description;
 	@Getter @Setter private String location;
 	@Getter @Setter private String howToSee;
+
+	@DBRef
+	@Getter @Setter private List<Comment> comments = new ArrayList<>();
+
+
+
+//	@Getter @Setter private CommentDTO comment;
+
+
 	
-	public Event () {
-		
+	public Event() {
 	}
 
-	public Event(String id, String nameEvent, Date dateEvent, String description, String location, String howToSee) {
-		super();
+	public Event(String id, String nameEvent, Date dateEvent, String description, String location, String howToSee, List<Comment> comments) {
 		this.id = id;
 		this.nameEvent = nameEvent;
 		this.dateEvent = dateEvent;
 		this.description = description;
 		this.location = location;
 		this.howToSee = howToSee;
+		this.comments = comments;
 	}
 
 	@Override

@@ -54,7 +54,8 @@ public class EventService {
 				objDTO.getDateEvent(), 
 				objDTO.getDescription(),
 				objDTO.getLocation(), 
-				objDTO.getHowToSee());
+				objDTO.getHowToSee(),
+				objDTO.getComment());
 	}
 	
 	public void delete(String id) {
